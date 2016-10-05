@@ -2,34 +2,31 @@
 var Alexa = require('alexa-sdk');
 
 var APP_ID = undefined; //OPTIONAL: replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
-var SKILL_NAME = 'Turtle Facts';
+var SKILL_NAME = 'Bicycle Facts';
 
 /**
- * Array containing turtle facts.
+ * Array containing bicycle facts.
  */
 var FACTS = [
-    "Turtles are reptiles.",
-    "Turtles have a hard shell that protects them.",
-    "The upper part of a turtle's shell is called a 'carapace'.",
-    "The lower part of a turtle's shell is called a 'plastron'.",
-    "Turtles have existed for almost 215 million years.",
-    "Turtles are cold blooded.",
-    "The largest species of turtle is the leatherback sea turtle.",
-    "In some species of turtle temperature can determine the sex of a developing egg.",
-    "Some turtles lay eggs in the sand and leave them to hatch on their own. The young turtles make their way to the top of the sand and scramble to the water while trying to avoid predators.",
-    "Sea turtles have specialized glands which help remove salt from the water they drink.",
-    "Many turtle species are endangered.",
-    "Turtles belong to the scientific order Testudines.",
-    "There are 327 known species of turtles alive today.",
-    "Turtles are classified as amniotes.",
-    "In Great Britain, the word turtle is used for sea-dwelling species, but not for tortoises.",
-    "The term tortoise usually refers to any land-dwelling, non-swimming chelonian.",
-    "The word chelonian is popular among veterinarians, scientists, and conservationists working with these animals as a catch-all name for any member of the superorder Chelonia, which includes all turtles living and extinct, as well as their immediate ancestors.",
-    "Terrapin is used to describe several species of small, edible, hard-shell turtles, typically those found in brackish waters, and is an Algonquian word for turtle.",
-    "Although many turtles spend large amounts of their lives underwater, all turtles and tortoises breathe air, and must surface at regular intervals to refill their lungs.",
-    "Like other reptiles, turtles lay eggs that are slightly soft and leathery.",
-    "Paleontologists from North Carolina State University have found the fossilized remains of the world's largest turtle in a coal mine in Colombia.",
-    "I like turtles."
+  "The first human powered land vehicle was constructed by Giovanni Fontana in 1418.",
+  "The term 'bicycle' first entered into popular usage in France in the 1860s.",
+  "The longest 'tandem' bike ever built was almost 67 feet long and could seat 35.",
+  "The smallest adult bicycle ever created had wheels made from silver dollars.",
+  "Unicycling is a mandatory subject at St. Helen's School in Newbury, Ohio.",
+  "Half of all the parts of a typical bicycle are in the chain.",
+  "The slow cycling record was set by Tsugunobu Mitsuishi of Japan in 1965 when he stayed stationary for 5 hours, 25 minutes.",
+  "The fastest speed ever recorded on a bicycle was attained by American Olympic Cyclist and Ironman triathlon competitor John Howard, when he reached 152.2 mph in 1985.",
+  "Lance Armstrong's heart is one-third larger than average.",
+  "There are roughly one billion bicycles in the world (about twice as many as motor vehicles).",
+  "An estimated 130 million bicycles were produced worldwide in 2007 (more than twice the 52 million cars produced).",
+  "According to Transportation Alternatives, 10% of New York City's work force--approximately 65,000 humans--commute by bicycle.",
+  "A study found almost three-quarters of fatal crashes (74%) in NYC involved a head injury and nearly all bicyclists who died (97%) were not wearing a helmet. Helmets have been found to be 85% effective in preventing head injury.",
+  "Research has shown that tripling the number of bike riders on the street cuts motorist-bicyclist crashes in half.",
+  "Bicycles currently displace over 238 million gallons of gasoline per year, by replacing car trips with bicycle trips.",
+  "Bicycles use 2% as much energy as cars per passenger-kilometer, and cost less than 3% as much to purchase.",
+  "Orville and Wilbur Wright, the brothers who built the first flying airplane, operated a small bike repair shop in Dayton, Ohio. They used their workshop to build the 1903 Wright Flyer.",
+  "There are over a half billion bicycles in China. Bikes were first brought to China in the late 1800s.",
+  "The Tour de France is one of the most famous bicycle races in the world. Established in 1903, it is considered to be the biggest test of endurance out of all sports."
 ];
 
 exports.handler = function(event, context, callback) {
@@ -47,7 +44,7 @@ var handlers = {
         this.emit('GetFact');
     },
     'GetFact': function () {
-        // Get a random turtle fact from the turtle facts list
+        // Get a random bicycle fact from the bicycle facts list
         var factIndex = Math.floor(Math.random() * FACTS.length);
         var randomFact = FACTS[factIndex];
 
