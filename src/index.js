@@ -2,31 +2,34 @@
 var Alexa = require('alexa-sdk');
 
 var APP_ID = undefined; //OPTIONAL: replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
-var SKILL_NAME = 'Bicycle Facts';
+var SKILL_NAME = 'Modern Art Facts';
 
 /**
- * Array containing bicycle facts.
+ * Array containing modern art facts.
  */
 var FACTS = [
-  "The first human powered land vehicle was constructed by Giovanni Fontana in 1418.",
-  "The term 'bicycle' first entered into popular usage in France in the 1860s.",
-  "The longest 'tandem' bike ever built was almost 67 feet long and could seat 35.",
-  "The smallest adult bicycle ever created had wheels made from silver dollars.",
-  "Unicycling is a mandatory subject at St. Helen's School in Newbury, Ohio.",
-  "Half of all the parts of a typical bicycle are in the chain.",
-  "The slow cycling record was set by Tsugunobu Mitsuishi of Japan in 1965 when he stayed stationary for 5 hours, 25 minutes.",
-  "The fastest speed ever recorded on a bicycle was attained by American Olympic Cyclist and Ironman triathlon competitor John Howard, when he reached 152.2 mph in 1985.",
-  "Lance Armstrong's heart is one-third larger than average.",
-  "There are roughly one billion bicycles in the world (about twice as many as motor vehicles).",
-  "An estimated 130 million bicycles were produced worldwide in 2007 (more than twice the 52 million cars produced).",
-  "According to Transportation Alternatives, 10% of New York City's work force--approximately 65,000 humans--commute by bicycle.",
-  "A study found almost three-quarters of fatal crashes (74%) in NYC involved a head injury and nearly all bicyclists who died (97%) were not wearing a helmet. Helmets have been found to be 85% effective in preventing head injury.",
-  "Research has shown that tripling the number of bike riders on the street cuts motorist-bicyclist crashes in half.",
-  "Bicycles currently displace over 238 million gallons of gasoline per year, by replacing car trips with bicycle trips.",
-  "Bicycles use 2% as much energy as cars per passenger-kilometer, and cost less than 3% as much to purchase.",
-  "Orville and Wilbur Wright, the brothers who built the first flying airplane, operated a small bike repair shop in Dayton, Ohio. They used their workshop to build the 1903 Wright Flyer.",
-  "There are over a half billion bicycles in China. Bikes were first brought to China in the late 1800s.",
-  "The Tour de France is one of the most famous bicycle races in the world. Established in 1903, it is considered to be the biggest test of endurance out of all sports."
+  "Modern art is a general term, used for most of the artistic production from the late 19th century until approximately the 1970s.",
+  "Modern art began as a Western movement, particularly in painting and printmaking, and then expanding to other visual arts, including sculpture and architecture in the mid-19th century.",
+  "The term modern art is usually associated with art in which the traditions of the past have been thrown aside in a spirit of experimentation.",
+  "More recent artistic production is often called Contemporary art or Postmodern art.",
+  "Henri Matisse's two versions of The Dance marked a key point in his career and in the development of modern painting.",
+  "Pablo Picasso made his first cubist paintings based on Cézanne's idea that all depiction of nature can be reduced to three solids: cube, sphere and cone.",
+  "Analytic cubism was jointly developed by Pablo Picasso and Georges Braque, exemplified by Violin and Candlestick, Paris, from about 1908 through 1912.",
+  "The notion of modern art is closely related to Modernism.",
+  "The date perhaps most commonly identified as marking the birth of modern art is 1863, the year that Édouard Manet showed his painting Le déjeuner sur l'herbe in the Salon des Refusés in Paris.",
+  "The pioneers of modern art were Romantics, Realists and Impressionists.",
+  "The Impressionists argued that people do not see objects but only the light which they reflect, and therefore painters should paint in natural light (en plein air) rather than in studios and should capture the effects of light in their work.",
+  "By the beginning of the 1872, The name Impressionism had emerged as a core label of this style. “Impressionism” was derived from the tile of a Claude Monet painting: Impression, soleil levant.",
+  "Les Nabis is a modern art movement which was considered to be on the cutting edge of modern art during their early period. Their subject matter was quite emblematic, but it was also oriented along the prototypes of Art Nouveau and the outlines of Japanese prints they so admired.",
+  "Post-Impressionism is a representation of both an extension of Impressionism and a rejection of that style’s inherent limitations.",
+  "Art Nouveau has emerged through the British art movement called the Arts and Crafts movement, which praised traditional craftsmanship over mass-produced elements of the industrial revolution.",
+  "Futurism is is a representation of embracing both popular and avant-garde mediums, and unlike many other modern art movements, Futurism was not immediately identified with a distinctive style.",
+  "Only Matisse continued to explore the possibilities and variations of Fauvism after 1908.",
+  "The foundation of Cubism Movement was Picasso’s early work including “Les Demoiselles d’Avignon” and it gradually developed into the style we now recognize as cubism.",
+  "Although suprematism was generally expressed through painting, it often emphasized the texture of the paint as one of the fundamental, irreducible characteristics of the medium itself.",
+  "All the various Dada groups was contrasting realism, embracing avant-garde shock strategies, but their tone differed; German Dada for example was far more political than the bohemian French strain.",
+  "The Bauhaus style, aka the International Style, was endorsed by great luminaries such as Gropius and Mies van der Rohe. Thus created an approach to design that gave equal measure to form and function, thus doing away with ornate decoration and frills.",
+  "Surrealism proved to be the most influential and the most persistent."
 ];
 
 exports.handler = function(event, context, callback) {
@@ -44,7 +47,7 @@ var handlers = {
         this.emit('GetFact');
     },
     'GetFact': function () {
-        // Get a random bicycle fact from the bicycle facts list
+        // Get a random modern art fact from the modern art facts list
         var factIndex = Math.floor(Math.random() * FACTS.length);
         var randomFact = FACTS[factIndex];
 
